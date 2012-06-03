@@ -569,13 +569,13 @@ public class SipStackImpl extends SIPTransactionStack implements
 				super.setStackLogger(stackLogger);
 			} catch (InvocationTargetException ex1) {
 				throw new IllegalArgumentException(
-						"Cound not instantiate stack logger "
+						"Could not instantiate stack logger "
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex1);
 			} catch (Exception ex) {
 				throw new IllegalArgumentException(
-						"Cound not instantiate stack logger "
+						"Could not instantiate stack logger "
 								+ stackLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex);
@@ -598,14 +598,14 @@ public class SipStackImpl extends SIPTransactionStack implements
 				serverLogger.setStackProperties(configurationProperties);
 			} catch (InvocationTargetException ex1) {
 				throw new IllegalArgumentException(
-						"Cound not instantiate server logger "
-								+ stackLoggerClassName
+						"Could not instantiate server logger "
+								+ serverLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex1);
 			} catch (Exception ex) {
 				throw new IllegalArgumentException(
-						"Cound not instantiate server logger "
-								+ stackLoggerClassName
+						"Could not instantiate server logger "
+								+ serverLoggerClassName
 								+ "- check that it is present on the classpath and that there is a no-args constructor defined",
 						ex);
 			}
