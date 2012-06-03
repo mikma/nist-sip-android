@@ -45,8 +45,7 @@ public class SipFactory {
 
         SipStack sipStack = mNameSipStackMap.get(name);
         if (sipStack == null) {
-            String implClassName = "gov.nist."
-                    + SipStack.class.getCanonicalName() + "Impl";
+            String implClassName = "x.gov.nist.javax.sip.SipStackImpl";
             try {
                 sipStack = Class.forName(implClassName)
                         .asSubclass(SipStack.class)
