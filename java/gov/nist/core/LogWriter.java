@@ -50,18 +50,23 @@ public class LogWriter implements StackLogger {
 
     public void logException(Throwable ex) {
         //Log.e(TAG, "", ex);
+	System.err.println(ex);
     }
     public void logDebug(String message) {
         //Log.d(TAG, message);
+	System.err.println(message);
     }
     public void logTrace(String message) {
         //Log.d(TAG, message);
+	System.err.println(message);
     }
     public void logFatalError(String message) {
         //Log.e(TAG, message);
+	System.err.println(message);
     }
     public void logError(String message) {
         //Log.e(TAG, message);
+	System.err.println(message);
     }
     public boolean isLoggingEnabled() {
         return mEnabled;
