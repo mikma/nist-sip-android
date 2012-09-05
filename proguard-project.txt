@@ -24,6 +24,8 @@
 -dontoptimize
 -applymapping mapping2.txt
 
+#-keepattributes Exceptions,Signature
+-keepattributes Exceptions,Signature,Deprecated,SourceFile,SourceDir,LineNumberTable,LocalVariableTable,LocalVariableTypeTable,Synthetic,EnclosingMethod,RuntimeVisibleAnnotations,RuntimeInvisibleAnnotations,RuntimeVisibleParameterAnnotations,RuntimeInvisibleParameterAnnotations,AnnotationDefault
 -keepclassmembernames class * { *; }
 -keepclassmember class * { public <init>(); }
 -keepclassmember class * { public <init>(x.javax.sip.SipStack,
