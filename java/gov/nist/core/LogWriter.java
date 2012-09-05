@@ -29,6 +29,8 @@ package gov.nist.core;
 import java.io.*;
 import java.util.Properties;
 
+import android.util.Log;
+
 // BEGIN ANDROID-added
 // TODO: this class should be replaced by android logging mechanism.
 public class LogWriter implements StackLogger {
@@ -38,10 +40,31 @@ public class LogWriter implements StackLogger {
 
     public void logStackTrace() {
         // TODO
+/*
+        Throwable ex = new Throwable();
+        Log.d(TAG, "", ex);
+*/
     }
 
     public void logStackTrace(int traceLevel) {
         // TODO
+/*
+        Throwable ex = new Throwable();
+
+        if ((traceLevel & LogLevels.TRACE_FATAL) != 0) {
+            Log.e(TAG, "", ex);
+        } else if ((traceLevel & LogLevels.TRACE_ERROR) != 0) {
+            Log.e(TAG, "", ex);
+        } else if ((traceLevel & LogLevels.TRACE_WARN) != 0) {
+            Log.w(TAG, "", ex);
+        } else if ((traceLevel & LogLevels.TRACE_INFO) != 0) {
+            Log.i(TAG, "", ex);
+        } else if ((traceLevel & LogLevels.TRACE_DEBUG) != 0) {
+            Log.d(TAG, "", ex);
+        } else if ((traceLevel & LogLevels.TRACE_TRACE) != 0) {
+            Log.v(TAG, "", ex);
+        }
+*/
     }
 
     public int getLineCount() {
@@ -49,24 +72,20 @@ public class LogWriter implements StackLogger {
     }
 
     public void logException(Throwable ex) {
-        //Log.e(TAG, "", ex);
-	System.err.println(ex);
+        Log.e(TAG, "", ex);
     }
     public void logDebug(String message) {
-        //Log.d(TAG, message);
-	System.err.println(message);
+        Log.d(TAG, message);
     }
     public void logTrace(String message) {
-        //Log.d(TAG, message);
-	System.err.println(message);
+        Log.v(TAG, message);
     }
     public void logFatalError(String message) {
-        //Log.e(TAG, message);
-	System.err.println(message);
+        // TODO maybe use wtf
+        Log.e(TAG, message);
     }
     public void logError(String message) {
-        //Log.e(TAG, message);
-	System.err.println(message);
+        Log.e(TAG, message);
     }
     public boolean isLoggingEnabled() {
         return mEnabled;
@@ -76,13 +95,13 @@ public class LogWriter implements StackLogger {
         return mEnabled;
     }
     public void logError(String message, Exception ex) {
-        //Log.e(TAG, message, ex);
+        Log.e(TAG, message, ex);
     }
     public void logWarning(String string) {
-        //Log.w(TAG, string);
+        Log.w(TAG, string);
     }
     public void logInfo(String string) {
-        //Log.i(TAG, string);
+        Log.i(TAG, string);
     }
 
     public void disableLogging() {
