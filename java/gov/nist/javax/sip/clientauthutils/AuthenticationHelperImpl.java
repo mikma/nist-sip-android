@@ -213,10 +213,13 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                 SipURI sipUri = (SipURI) reoriginatedRequest.getRequestURI();
                 // BEGIN android-added
                 if ( !hop.getHost().equalsIgnoreCase(sipUri.getHost())
-                        && !hop.equals(sipStack.getRouter(challengedRequest).getOutboundProxy()) )
+                        && !hop.equals(sipStack.getRouter(challengedRequest).getOutboundProxy()) ) {
                 // END android-added
                 sipUri.setMAddrParam(hop.getHost());
                 if ( hop.getPort() != -1 ) sipUri.setPort(hop.getPort());
+                // BEGIN android-added
+		}
+                // END android-added
             }
             ClientTransaction retryTran = transactionCreator
             .getNewClientTransaction(reoriginatedRequest);
