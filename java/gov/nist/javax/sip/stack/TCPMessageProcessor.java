@@ -176,7 +176,8 @@ public class TCPMessageProcessor extends MessageProcessor {
         isRunning = false;
         // this.listeningPoint = null;
         try {
-            sock.close();
+            if (sock != null)
+                sock.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
